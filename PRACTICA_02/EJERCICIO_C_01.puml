@@ -1,0 +1,13 @@
+// haga el diagrama de clases correspondiente
+
+@startuml EJERCICIO_C_01
+
+class poligono
+class punto {
+    -coord_x
+    -coord_y
+}
+
+punto "1 ... *" -u-o poligono
+
+@enduml

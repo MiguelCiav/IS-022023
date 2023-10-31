@@ -1,0 +1,13 @@
+//Un equipo de baseball está formado por jugadores y tienen asignado como homeclub un
+estadio
+
+@startuml EJERCICIO_05
+
+class equipo
+class jugadores
+class estadio
+
+equipo "1" o-- "1...*" jugadores
+equipo --> estadio: "tiene asignado"
+
+@enduml

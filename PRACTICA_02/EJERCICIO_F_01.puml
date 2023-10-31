@@ -1,0 +1,43 @@
+//Un equipo de voleyball tiene de 6 a 20 jugadores, uno de los cuales es el capitán del equipo. Todo equipo tiene un nombre y un registro, y todo jugador tiene un número y una posición. Los equipos compiten en juegos y cada juego tiene una localidad y una puntuación. Un equipo puede tener un entrenador que tiene un nivel de acreditación y un número de años de experiencia. Un mismo entrenador puede entrenar diferentes equipos. Cualquier persona, ya sea jugador de un equipo, así como el entrenador, tienen un teléfono, nombre y dirección.
+
+@startuml EJERCICIO_F
+
+class Persona {
+    #telefeno
+    #nombre
+    #direccion
+}
+
+class Jugador{
+    #numero
+    #posicion
+}
+
+class Capitan
+
+class Equipo{
+    -nombre
+    -registro
+}
+
+class Entrenador{
+    -acreditacion
+    -experiencia
+}
+
+class Juego {
+    -localidad
+    -puntuacion
+}
+
+Jugador -u-|> Persona
+Entrenador -u-|> Persona
+Capitan --|> Jugador
+Equipo o-l- Capitan
+
+Jugador "5 ... 19" --o Equipo
+Equipo "2" --> "1" Juego: compite
+Entrenador --> "1 ... *" Equipo: Entrena
+
+
+@enduml

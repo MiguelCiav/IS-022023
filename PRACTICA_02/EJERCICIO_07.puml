@@ -1,0 +1,15 @@
+//Una caracterización se fundamenta en al menos un criterio, un elemento clasificado se genera a partir de una caracterización que depende del criterio utilizado.
+
+@startuml EJERCICIO_07
+
+class caracterizacion
+class criterio 
+class elemento_clasificado
+
+caracterizacion "1" --> "1 ... *" criterio : "se fundamenta"
+
+caracterizacion <|-- elemento_clasificado
+elemento_clasificado ..> criterio
+
+
+@enduml

@@ -1,0 +1,12 @@
+// Un triángulo es un polígono que esta formado por 3 lados
+
+@startuml EJERCICIO_04
+
+class triangulo
+class poligono
+class lado
+
+poligono <|-- triangulo
+triangulo "1" o-- "3" lado
+
+@enduml
