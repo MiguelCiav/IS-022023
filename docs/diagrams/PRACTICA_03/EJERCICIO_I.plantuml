@@ -1,0 +1,31 @@
+@startuml EJERICICIO_I
+hide empty description
+
+state "Colocando Pedido" as colocando_Pedido
+
+[*] --> colocando_Pedido : Encargar Producto
+
+state "Pagando Pedido" as pagando_Pedido
+pagando_Pedido : Validar Pedido
+pagando_Pedido : Cobrar Pago
+
+colocando_Pedido -r-> pagando_Pedido : Pedido Colocado
+
+state "Realizando Pedido" as realizando_Pedido {
+    state "Obteniendo Producto" as obteniendo_Producto
+    state "Enviando Urgente" as enviando_urgente
+    state "Enviando Ordinario" as enviando_ordinario
+    state urgencia <<choice>>
+
+    obteniendo_Producto -l-> urgencia
+    urgencia --> enviando_urgente : Urgente[Sí]
+    urgencia --> enviando_ordinario : Urgente[No]
+
+}
+
+pagando_Pedido -d-> obteniendo_Producto : Pedido Cobrado
+
+enviando_urgente --> [*]
+enviando_ordinario --> [*]
+
+@enduml
