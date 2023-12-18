@@ -1,0 +1,10 @@
+//Un teclado tiene por lo menos 105 teclas
+
+@startuml EJERCICIO_01
+
+class teclado
+class teclas
+
+teclado "1" o-- "105 ... *" teclas 
+
+@enduml

@@ -1,0 +1,15 @@
+//La ecuación de FP tiene 2 operandos, el primero es UFC, el segundo es TCF. Los TCF
+dependen de la valoración de 14 subfactores de complejidad técnica (Fi)
+
+@startuml EJERCICIO_09
+
+class FP
+class UFC 
+class TCF 
+class Fi 
+
+FP o-- UFC
+FP o-- TCF
+TCF "1" ..> "14" Fi 
+
+@enduml

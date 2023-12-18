@@ -1,0 +1,66 @@
+//(x + y/2) / (x/3 + y)
+
+//1. x -> variable
+//2. y -> variable
+//3. 2 -> constante
+//4. 3 -> constante 
+//5. y/2 -> expresion
+//6. x/3 -> expresion 
+//7. x + y/2 -> expresion
+//8. x/3 + y -> expresion
+//9. (x + y/2) / (x/3 + y) -> expresion
+
+@startuml EJERCICIO_D_01
+
+object "x : Variable" as x {
+    -nombre = "x"
+}
+
+object "y : Variable" as y {
+    -nombre = "y"
+}
+
+object "2 : Constante" as 2 {
+    -valor = 2
+}
+
+object "3 : Constante" as 3 {
+    -valor = 3
+}
+
+object "y/2 : Expresion" as y_entre_2 {
+    -operador_binario = "/"
+}
+
+y_entre_2 -- "1ero" y 
+y_entre_2 -- "2do" 2
+
+object "x/3 : Expresion" as x_entre_3 {
+    -operador_binario = "/"
+}
+
+x_entre_3 -- "1ero" x
+x_entre_3 -- "2do" 3
+
+object "x + y/2 : Expresion" as x_mas_y_entre_dos {
+    -operador_binario = "+"
+}
+
+x_mas_y_entre_dos -- "1ero" x
+x_mas_y_entre_dos -- "2do" y_entre_2
+
+object "x/3 + y : Expresion" as x_entre_3_mas_y {
+    -operador_binario = "+"
+}
+
+x_entre_3_mas_y -- "1ero" x_entre_3
+x_entre_3_mas_y -- "2do" y
+
+object "expresion_final : Expresion" as expresion_final {
+    -operador_binario = "/"
+}
+
+expresion_final -- "1ero" x_mas_y_entre_dos
+expresion_final -- "2do" x_entre_3_mas_y
+
+@enduml

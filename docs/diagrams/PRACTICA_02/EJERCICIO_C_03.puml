@@ -1,0 +1,32 @@
+//Hacer un diagrama de objetos de un polígono con cuatro puntos: (0,0), (1,0), (0,1) y (1,1)
+
+@startuml EJERCICIO_C_03
+
+object "Pol_1 : Poligono" as Pol_1
+
+object "P1 : Punto" as P1 {
+    coord_x = 0
+    coord_y = 0
+}
+
+object "P2 : Punto" as P2 {
+    coord_x = 1
+    coord_y = 0
+}
+
+object "P3 : Punto" as P3 {
+    coord_x = 0
+    coord_y = 1
+}
+
+object "P4 : Punto" as P4 {
+    coord_x = 1
+    coord_y = 1
+}
+
+Pol_1 -- P1
+Pol_1 -- P2
+Pol_1 -- P3
+Pol_1 -- P4
+
+@enduml

@@ -1,0 +1,14 @@
+//Los estudiantes, los profesores y los empleados son personas
+
+@startuml EJERCICIO_02
+
+class personas
+class estudiantes
+class profesores
+class empleados
+
+personas <|-- estudiantes
+personas <|-- profesores
+personas <|-- empleados
+
+@enduml
