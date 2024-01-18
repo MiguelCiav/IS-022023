@@ -1,0 +1,49 @@
+@startuml turn_on_devices
+
+class turnOnDevices {
+    + main(string args[])
+    + turnOnDevice(Connectable device)
+}
+
+interface Connectable {
+    + turnOn()
+    + turnOff()
+    + isOn()
+}
+
+class Lamp {
+    + turnOn()
+    + turnOff()
+    + isOn()
+}
+
+class Computer {
+    + turnOn()
+    + turnOff()
+    + isOn()
+}
+
+class CoffeMaker{
+
+    - on
+    + on()
+    + off()
+    + isOff()
+    
+}
+
+class CoffeMakerAdapter{
+
+    + turnOn()
+    + turnOff()
+    + isOn()
+    
+}
+
+turnOnDevices -r-> Connectable
+Lamp -u-|> Connectable
+Computer -u-|> Connectable
+CoffeMakerAdapter -u-|> Connectable
+CoffeMakerAdapter -l-|> CoffeMaker
+
+@enduml
